@@ -1,6 +1,6 @@
 import tweepy #API for twitter
 from django.http import *
-from django.shortcuts import render_to_response
+# from django.shortcuts import render_to_response
 from django.urls import reverse
 from django.contrib.auth import logout
 from django.contrib import messages
@@ -22,7 +22,7 @@ def main(request):
 	if check_key(request):
 		return HttpResponseRedirect(reverse('info')) #goto info
 	else:
-		return render_to_response('twitter_auth/login.html') #goto login
+		return render(request, 'twitter_auth/login.html') #goto login
 
 def unauth(request):
 	"""
@@ -60,7 +60,7 @@ def info(request):
 		sNEU = reg[4]
 		cNEU = cat[4]
 
-		return render_to_response('twitter_auth/info.html', {'user':user , 'sOPN':sOPN ,'cOPN':cOPN ,'sCON':sCON,'cCON':cCON,
+		return render(request, 'twitter_auth/info.html', {'user':user , 'sOPN':sOPN ,'cOPN':cOPN ,'sCON':sCON,'cCON':cCON,
 		'sEXT':sEXT,'cEXT':cEXT,'sAGR':sAGR ,'cAGR':cAGR ,'sNEU':sNEU,'cNEU':cNEU, 'tweet_data':tweet_data , 'tweets':tweets,
 		'number': range(10) })
 	else:
@@ -119,7 +119,7 @@ def home_timeline(request):
 
     	return render(request, 'twitter_auth/public_tweets.html', {'public_tweets': public_tweets})
     else:
-        return render_to_response('twitter_auth/login.html') #goto login
+        return render(request, 'twitter_auth/login.html') #goto login
 
 #post tweet
 def post_tweet(request):
@@ -149,4 +149,4 @@ def post_tweet(request):
         return render(request, 'twitter_auth/post_tweet.html', {"tweet" : tweet})
 
    else:
-        return render_to_response('twitter_auth/login.html') #goto login
+        return render(request, 'twitter_auth/login.html') #goto login
