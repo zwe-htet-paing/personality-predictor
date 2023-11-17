@@ -1,0 +1,62 @@
+{% extends "base_result.html" %} {% block content %}
+<div class="container">
+  <div align="center">
+    <h1>Personality Prediction Results</h1>
+    <br />
+    {% comment %}
+    <p>Twitter Username: {{ prediction.username }}</p>
+    {% endcomment %}
+
+    <h2>Big Five Personality Traits:</h2>
+  </div>
+  <br />
+  <br />
+
+  <div id="container" class="text-center">
+    <table align="center">
+      <tr>
+        <th><h3>TRAITS</h3></th>
+        <th><h3>SCORE</h3></th>
+        {% comment %}
+        <th><h3>PERCENTAGE</h3></th>
+        {% endcomment %}
+      </tr>
+      <tr>
+        <td align="left"><h4>Openness:</h4></td>
+        <td><h5>{{prediction.cOPN}}</h5></td>
+        {% comment %}
+        <td><h5>{{prediction.cOPN}}</h5></td>
+        {% endcomment %}
+      </tr>
+      <tr>
+        <td align="left"><h4>Conscientiousness:</h4></td>
+        <td><h5>{{prediction.cCON}}</h5></td>
+        {% comment %}
+        <td><h5>{{prediction.cCON}}</h5></td>
+        {% endcomment %}
+      </tr>
+      <tr>
+        <td align="left"><h4>Extraversion:</h4></td>
+        <td><h5>{{prediction.cEXT}}</h5></td>
+        {% comment %}
+        <td><h5>{{prediction.cEXT}}</h5></td>
+        {% endcomment %}
+      </tr>
+      <tr>
+        <td align="left"><h4>Agreeableness:</h4></td>
+        <td><h5>{{prediction.cAGR}}</h5></td>
+        {% comment %}
+        <td><h5>{{prediction.cAGR}}</h5></td>
+        {% endcomment %}
+      </tr>
+      <tr>
+        <td align="left"><h4>Neuroticism:</h4></td>
+        <td><h5>{{prediction.cNEU}}</h5></td>
+        {% comment %}
+        <td><h5>{{prediction.cNEU}}</h5></td>
+        {% endcomment %}
+      </tr>
+    </table>
+  </div>
+  {% endblock %}
+</div>

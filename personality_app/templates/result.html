@@ -1,0 +1,25 @@
+<!-- personality_app/templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Prediction Results</title>
+</head>
+<body>
+    <h1>Personality Prediction Results</h1>
+
+    <p>Twitter Username: {{ personality_traits.username }}</p>
+
+    <h2>Big Five Personality Traits:</h2>
+    <ul>
+        <li>Openness: {{ personality_traits.openness }}</li>
+        <li>Conscientiousness: {{ personality_traits.conscientiousness }}</li>
+        <li>Extraversion: {{ personality_traits.extraversion }}</li>
+        <li>Agreeableness: {{ personality_traits.agreeableness }}</li>
+        <li>Neuroticism: {{ personality_traits.neuroticism }}</li>
+    </ul>
+</body>
+</html>
